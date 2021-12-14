@@ -1,89 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ButtonLogIn"
+
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
+    android:background="#FFFFFF">
 
-    <TabHost
-        android:id="@+id/profileTabHost"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
 
-        <LinearLayout
+
+        android:background="@color/backgrount"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ButtonLogIn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            tools:context=".ui.profile.ProfileFragment">
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:visibility="invisible"
-                tools:visibility="visible"
-                tools:ignore="Suspicious0dp" />
-
-            <FrameLayout
-                android:id="@android:id/tabcontent"
+            <TabHost
+                android:id="@+id/profileTabHost"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/tabLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="visible"
-                    tools:visibility="visible">
-
-                    <EditText
-                        android:id="@+id/editTextlogin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Login"
-                        android:inputType="textPersonName" />
-
-                    <EditText
-                        android:id="@+id/editTextPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Password"
-                        android:inputType="textPassword" />
-
-                    <EditText
-                        android:id="@+id/editTextAddress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Address"
-                        android:inputType="textPersonName" />
-
-                    <Button
-                        android:id="@+id/buttonLogIn"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Log In"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tabProfile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-                </LinearLayout>
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:visibility="invisible"
+                        tools:ignore="Suspicious0dp"
+                        tools:visibility="visible" />
 
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/tabLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            tools:visibility="visible">
+
+                            <EditText
+                                android:id="@+id/editTextlogin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="Login"
+                                android:inputType="textPersonName" />
+
+                            <EditText
+                                android:id="@+id/editTextPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="Password"
+                                android:inputType="textPassword" />
+
+                            <EditText
+                                android:id="@+id/editTextAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:hint="Address"
+                                android:inputType="textPersonName" />
+
+                            <Button
+                                android:id="@+id/buttonLogIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Log In"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tabProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="right"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/buttonSetting"
+                                    style="?android:attr/borderlessButtonStyle"
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:gravity="fill"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    android:padding="0dp"
+                                    android:paddingLeft="0dp"
+                                    android:paddingTop="0dp"
+                                    android:paddingRight="0dp"
+                                    android:paddingBottom="0dp"
+                                    android:shadowDx="0"
+                                    android:shadowDy="0"
+                                    android:shadowRadius="0"
+                                    app:backgroundTint="#00FFFFFF"
+                                    app:elevation="0dp"
+                                    app:icon="@drawable/ic_baseline_settings_24"
+                                    app:iconGravity="start"
+                                    app:iconPadding="0dp"
+                                    app:iconSize="48dp"
+                                    app:iconTint="#000000" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/textViewLogin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Login"
+                                android:textColor="@color/black"
+                                android:textSize="36sp" />
+
+                            <TextView
+                                android:id="@+id/textViewAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Address"
+                                android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tabSetting"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/buttonSettingBack"
+                                    style="?android:attr/borderlessButtonStyle"
+                                    android:layout_width="48dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="fill"
+                                    android:insetTop="0dp"
+                                    android:insetBottom="0dp"
+                                    android:padding="0dp"
+                                    android:paddingLeft="0dp"
+                                    android:paddingTop="0dp"
+                                    android:paddingRight="0dp"
+                                    android:paddingBottom="0dp"
+                                    app:backgroundTint="#00FFFFFF"
+                                    app:elevation="0dp"
+                                    app:icon="@drawable/ic_baseline_keyboard_backspace_24"
+                                    app:iconGravity="start"
+                                    app:iconPadding="0dp"
+                                    app:iconSize="48dp"
+                                    app:iconTint="#000000" />
+
+                                <TextView
+                                    android:id="@+id/TextViewSetting"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="Setting"
+                                    android:textColor="#000000"
+                                    android:textColorHighlight="#020202"
+                                    android:textSize="36sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:scrollbars="vertical">
+
+                                <Button
+                                    android:id="@+id/buttonLogOut"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="left"
+                                    android:text="Log Out"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                    android:textColor="#000000"
+                                    app:backgroundTint="#FFFFFF" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
